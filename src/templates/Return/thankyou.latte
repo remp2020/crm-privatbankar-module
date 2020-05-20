@@ -1,0 +1,36 @@
+{block #head}
+    <style>
+        #ipn-confirmation-spinner {
+            background: #f5f5f5;
+            width: 20px;
+            display: inline-block;
+        }
+    </style>
+{/block}
+
+{block #content}
+
+{control simpleWidget 'privatbankar.return.pending', $payment}
+
+<script type="text/javascript">
+    var ping = true;
+
+    (function worker() {
+
+        $.ajax({
+            url: {plink checkIpn!, 'paymentId' => $payment->id},
+            success: function (data) {
+                if (data['redirect']) {
+                    ping = false;
+                    window.location.href = data['redirect'];
+                }
+            },
+            complete: function() {
+                // Schedule the next request when the current one's complete
+                if (ping) {
+                    setTimeout(worker, 5000);
+                }
+            }
+        });
+    })();
+</script>

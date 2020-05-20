@@ -1,0 +1,17 @@
+services:
+	moduleManager:
+		setup:
+			- addModule(Crm\PrivatbankarModule\PrivatbankarModule())
+
+	- Crm\PrivatbankarModule\Api\IpnHandler
+	- Crm\PrivatbankarModule\Components\ConfirmationPendingWidget
+	- Crm\PrivatbankarModule\Gateways\Privatbankar
+	- Crm\PrivatbankarModule\Gateways\PrivatbankarRecurrent
+	- Crm\PrivatbankarModule\Seeders\ConfigsSeeder
+	- Crm\PrivatbankarModule\Seeders\PaymentGatewaysSeeder
+	- Crm\PrivatbankarModule\Seeders\SalesFunnelsSeeder
+
+	gatewayFactory:
+		setup:
+			- registerGateway(privatbankar, Crm\PrivatbankarModule\Gateways\Privatbankar)
+			- registerGateway(privatbankar_recurrent, Crm\PrivatbankarModule\Gateways\PrivatbankarRecurrent)

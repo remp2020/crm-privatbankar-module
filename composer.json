@@ -1,0 +1,17 @@
+{
+  "name": "remp/crm-privatbankar-module",
+  "description": "CRM Privatbankar Module",
+  "type": "library",
+  "homepage": "https://remp2020.com",
+  "license": "MIT",
+  "require": {
+    "php": "^7.2"
+  },
+  "minimum-stability": "dev",
+  "autoload": {
+    "psr-4": {
+      "Crm\\PrivatbankarModule\\": "src/"
+    },
+    "classmap": ["src/"]
+  }
+}
