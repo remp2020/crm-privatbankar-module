@@ -84,6 +84,13 @@ abstract class AbstractPrivatbankar extends GatewayAbstract
 
         $this->response = $purchaseRequest->send();
 
+        if (!$this->response->getTransactionReference()) {
+            if ($this->response->getData()['status'] === 'error') {
+                throw new InvalidRequestException('Unable to initialize Privatbankar payment: ' . $this->response->getData()['message'][0]);
+            }
+            throw new InvalidRequestException("Unable to initialize Privatbankar payment, gateway didn't return transaction reference");
+        }
+
         $this->paymentMetaRepository->add($payment, 'privatbankar_transaction_reference', $this->response->getTransactionReference());
     }
 
