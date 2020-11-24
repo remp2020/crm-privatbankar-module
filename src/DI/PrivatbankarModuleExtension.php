@@ -24,6 +24,14 @@ final class PrivatbankarModuleExtension extends CompilerExtension implements ITr
         );
     }
 
+    public function beforeCompile()
+    {
+        $builder = $this->getContainerBuilder();
+        // load presenters from extension to Nette
+        $builder->getDefinition($builder->getByType(\Nette\Application\IPresenterFactory::class))
+            ->addSetup('setMapping', [['Privatbankar' => 'Crm\PrivatbankarModule\Presenters\*Presenter']]);
+    }
+
     /**
      * Return array of directories, that contain resources for translator.
      * @return string[]
