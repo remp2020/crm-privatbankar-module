@@ -37,11 +37,12 @@ class PrivatbankarRecurrent extends AbstractPrivatbankar implements RecurrentPay
     public function checkValid($token)
     {
         // TODO: 24 charges or 2 years since initial payment
+        throw new InvalidRequestException(self::GATEWAY_CODE . " gateway doesn't support checking if token is still valid");
     }
 
     public function checkExpire($recurrentPayments)
     {
-        throw new InvalidRequestException("gateway doesn't support token expiration check");
+        throw new InvalidRequestException(self::GATEWAY_CODE . " gateway doesn't support token expiration check");
     }
 
     public function hasRecurrentToken(): bool
