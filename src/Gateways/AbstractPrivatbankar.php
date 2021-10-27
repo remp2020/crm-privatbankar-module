@@ -7,7 +7,7 @@ use Crm\PaymentsModule\Gateways\GatewayAbstract;
 use Crm\PaymentsModule\Repository\PaymentMetaRepository;
 use Nette\Application\LinkGenerator;
 use Nette\Http\Response;
-use Nette\Localization\ITranslator;
+use Nette\Localization\Translator;
 use Nette\Utils\Strings;
 use Omnipay\Common\Exception\InvalidRequestException;
 use Omnipay\Omnipay;
@@ -29,7 +29,7 @@ abstract class AbstractPrivatbankar extends GatewayAbstract
         LinkGenerator $linkGenerator,
         ApplicationConfig $applicationConfig,
         Response $httpResponse,
-        ITranslator $translator,
+        Translator $translator,
         PaymentMetaRepository $paymentMetaRepository
     ) {
         parent::__construct($linkGenerator, $applicationConfig, $httpResponse, $translator);
