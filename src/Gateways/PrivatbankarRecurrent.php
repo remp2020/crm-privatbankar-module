@@ -8,7 +8,7 @@ use Omnipay\Privatbankar\Message\PurchaseRequest;
 
 class PrivatbankarRecurrent extends AbstractPrivatbankar implements RecurrentPaymentInterface
 {
-    const GATEWAY_CODE = 'privatbankar_recurrent';
+    public const GATEWAY_CODE = 'privatbankar_recurrent';
 
     public function begin($payment)
     {

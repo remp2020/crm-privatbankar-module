@@ -4,7 +4,7 @@ namespace Crm\PrivatbankarModule\Gateways;
 
 class Privatbankar extends AbstractPrivatbankar
 {
-    const GATEWAY_CODE = 'privatbankar';
+    public const GATEWAY_CODE = 'privatbankar';
 
     public function begin($payment)
     {
