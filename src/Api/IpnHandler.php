@@ -23,7 +23,7 @@ class IpnHandler extends \Crm\ApiModule\Api\ApiHandler
         $this->paymentProcessor = $paymentProcessor;
     }
 
-    public function params()
+    public function params(): array
     {
         return [
             new InputParam(InputParam::TYPE_GET, 'uuid', InputParam::REQUIRED),
