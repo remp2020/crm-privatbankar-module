@@ -4,9 +4,9 @@ namespace Crm\PrivatbankarModule\Api;
 
 use Crm\ApiModule\Api\EmptyResponse;
 use Crm\ApiModule\Api\JsonResponse;
-use Crm\ApiModule\Authorization\ApiAuthorizationInterface;
 use Crm\ApiModule\Params\InputParam;
 use Crm\ApiModule\Params\ParamsProcessor;
+use Crm\ApiModule\Response\ApiResponseInterface;
 use Crm\PaymentsModule\PaymentProcessor;
 use Crm\PaymentsModule\Repository\PaymentMetaRepository;
 use Nette\Http\Response;
@@ -30,7 +30,7 @@ class IpnHandler extends \Crm\ApiModule\Api\ApiHandler
         ];
     }
 
-    public function handle(ApiAuthorizationInterface $authorization)
+    public function handle(array $params): ApiResponseInterface
     {
         $paramsProcessor = new ParamsProcessor($this->params());
         if ($paramsProcessor->isError()) {
