@@ -1,11 +1,11 @@
 config:
-	source:
-		name: Privatbankar Source
-		description: "Source provided by Privatbankar gateway. It identifies redirect configuration and merchant information. (e.g. <code>pp_subscription</code>)"
-	mode:
-		name: Privatbankar Mode
-		description: "Flag whether production or sandbox (testing) gateway should be used. (<code>live</code> for production, anything else for sandbox)"
+    source:
+        name: Privatbankar Source
+        description: "Source provided by Privatbankar gateway. It identifies redirect configuration and merchant information. (e.g. <code>pp_subscription</code>)"
+    mode:
+        name: Privatbankar Mode
+        description: "Flag whether production or sandbox (testing) gateway should be used. (<code>live</code> for production, anything else for sandbox)"
 
 component:
-	confirmation_pending:
-		title: "Confirmation pending, please wait."
+    confirmation_pending:
+        title: "Confirmation pending, please wait."
