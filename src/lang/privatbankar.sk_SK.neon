@@ -1,0 +1,11 @@
+config:
+	source:
+		name: Privatbankar Source
+		description: "`Source` poskytnutý platobnou bránou Privatbankar. Identifikuje konfiguráciu presmerovania a informácie o obchodníkovi. (napr. <code>pp_subscription</code>)"
+	mode:
+		name: Privatbankar Mode
+		description: "Prepínač určujúci v akom móde je platobná brána (<code>live</code> pre produkčný mód; iná hodnota aktivuje sandbox)."
+
+component:
+	confirmation_pending:
+		title: "Čakáme na potvrdenie, počkajte prosím."
