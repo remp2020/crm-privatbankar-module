@@ -1,5 +1,7 @@
 # CRM Privatbankar Module
 
+[![Translation status @ Weblate](https://hosted.weblate.org/widgets/remp-crm/-/privatbankar-module/svg-badge.svg)](https://hosted.weblate.org/projects/remp-crm/privatbankar-module/)
+
 ## Installation
 
 We recommend using Composer for installation and update management. To add CRM Stripe extension to your [REMP CRM](https://github.com/remp2020/crm-skeleton/) application use following command:
