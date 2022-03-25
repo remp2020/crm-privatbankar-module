@@ -2,16 +2,17 @@
 
 namespace Crm\PrivatbankarModule\Api;
 
+use Crm\ApiModule\Api\ApiHandler;
 use Crm\ApiModule\Api\EmptyResponse;
-use Crm\ApiModule\Api\JsonResponse;
 use Crm\ApiModule\Params\InputParam;
 use Crm\ApiModule\Params\ParamsProcessor;
-use Crm\ApiModule\Response\ApiResponseInterface;
 use Crm\PaymentsModule\PaymentProcessor;
 use Crm\PaymentsModule\Repository\PaymentMetaRepository;
 use Nette\Http\Response;
+use Tomaj\NetteApi\Response\JsonApiResponse;
+use Tomaj\NetteApi\Response\ResponseInterface;
 
-class IpnHandler extends \Crm\ApiModule\Api\ApiHandler
+class IpnHandler extends ApiHandler
 {
     private $paymentMetaRepository;
 
@@ -30,20 +31,18 @@ class IpnHandler extends \Crm\ApiModule\Api\ApiHandler
         ];
     }
 
-    public function handle(array $params): ApiResponseInterface
+    public function handle(array $params): ResponseInterface
     {
         $paramsProcessor = new ParamsProcessor($this->params());
         if ($paramsProcessor->hasError()) {
-            $response = new JsonResponse(['status' => 'error', 'message' => $paramsProcessor->hasError()]);
-            $response->setHttpCode(Response::S400_BAD_REQUEST);
+            $response = new JsonApiResponse(Response::S400_BAD_REQUEST, ['status' => 'error', 'message' => $paramsProcessor->hasError()]);
             return $response;
         }
         $params = $paramsProcessor->getValues();
 
         $meta = $this->paymentMetaRepository->findByMeta('privatbankar_transaction_reference', $params['uuid']);
         if (!$meta) {
-            $response = new JsonResponse(['status' => 'error', 'message' => 'payment not found: ' . $params['uuid']]);
-            $response->setHttpCode(Response::S404_NOT_FOUND);
+            $response = new JsonApiResponse(Response::S404_NOT_FOUND, ['status' => 'error', 'message' => 'payment not found: ' . $params['uuid']]);
             return $response;
         }
 
@@ -54,7 +53,7 @@ class IpnHandler extends \Crm\ApiModule\Api\ApiHandler
         });
 
         $response = new EmptyResponse();
-        $response->setHttpCode(Response::S200_OK);
+        $response->setCode(Response::S200_OK);
         return $response;
     }
 }
