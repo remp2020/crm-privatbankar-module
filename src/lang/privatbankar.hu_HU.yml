@@ -8,4 +8,4 @@ config:
 
 component:
     confirmation_pending:
-        title: "Megerősítés folyamatban, kérjük várjon."
+        title: "Megerősítés folyamatban, kérjük, várjon."
