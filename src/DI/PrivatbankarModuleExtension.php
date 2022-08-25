@@ -2,10 +2,10 @@
 
 namespace Crm\PrivatbankarModule\DI;
 
-use Kdyby\Translation\DI\ITranslationProvider;
+use Contributte\Translation\DI\TranslationProviderInterface;
 use Nette\DI\CompilerExtension;
 
-final class PrivatbankarModuleExtension extends CompilerExtension implements ITranslationProvider
+final class PrivatbankarModuleExtension extends CompilerExtension implements TranslationProviderInterface
 {
     private $defaults = [];
 
@@ -32,7 +32,7 @@ final class PrivatbankarModuleExtension extends CompilerExtension implements ITr
      * Return array of directories, that contain resources for translator.
      * @return string[]
      */
-    public function getTranslationResources()
+    public function getTranslationResources(): array
     {
         return [__DIR__ . '/../lang/'];
     }
