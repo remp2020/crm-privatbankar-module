@@ -8,7 +8,7 @@ use Crm\ApiModule\Router\ApiIdentifier;
 use Crm\ApiModule\Router\ApiRoute;
 use Crm\ApplicationModule\CrmModule;
 use Crm\ApplicationModule\SeederManager;
-use Crm\ApplicationModule\Widget\WidgetManagerInterface;
+use Crm\ApplicationModule\Widget\LazyWidgetManagerInterface;
 use Crm\PrivatbankarModule\Api\IpnHandler;
 use Crm\PrivatbankarModule\Components\ConfirmationPendingWidget;
 use Crm\PrivatbankarModule\Seeders\ConfigsSeeder;
@@ -35,11 +35,11 @@ class PrivatbankarModule extends CrmModule
         );
     }
 
-    public function registerWidgets(WidgetManagerInterface $widgetManager)
+    public function registerLazyWidgets(LazyWidgetManagerInterface $widgetManager)
     {
         $widgetManager->registerWidget(
             'privatbankar.return.pending',
-            $this->getInstance(ConfirmationPendingWidget::class),
+            ConfirmationPendingWidget::class,
             500
         );
     }

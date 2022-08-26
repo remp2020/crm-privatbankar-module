@@ -2,9 +2,9 @@
 
 namespace Crm\PrivatbankarModule\Components;
 
-use Crm\ApplicationModule\Widget\BaseWidget;
+use Crm\ApplicationModule\Widget\BaseLazyWidget;
 
-class ConfirmationPendingWidget extends BaseWidget
+class ConfirmationPendingWidget extends BaseLazyWidget
 {
     private $templateName = 'confirmation_pending_widget.latte';
 
