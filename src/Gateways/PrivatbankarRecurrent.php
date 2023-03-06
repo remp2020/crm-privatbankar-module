@@ -5,6 +5,7 @@ namespace Crm\PrivatbankarModule\Gateways;
 use Crm\PaymentsModule\Gateways\RecurrentPaymentInterface;
 use Omnipay\Common\Exception\InvalidRequestException;
 use Omnipay\Privatbankar\Message\PurchaseRequest;
+use Omnipay\Privatbankar\Message\PurchaseResponse;
 
 class PrivatbankarRecurrent extends AbstractPrivatbankar implements RecurrentPaymentInterface
 {
@@ -23,13 +24,16 @@ class PrivatbankarRecurrent extends AbstractPrivatbankar implements RecurrentPay
 
         /** @var PurchaseRequest $chargeRequest */
         $chargeRequest = $this->gateway->charge();
-        $this->response = $chargeRequest
+
+        /** @var PurchaseResponse $response */
+        $response = $chargeRequest
             ->setTransactionReference($token)
             ->send();
+        $this->response = $response;
 
         $this->checkChargeStatus($payment, $this->getResultCode());
 
-        $this->paymentMetaRepository->add($payment, 'privatbankar_token', $this->response->getTransactionId());
+        $this->paymentMetaRepository->add($payment, 'privatbankar_token', $response->getTransactionId());
 
         return self::CHARGE_OK;
     }

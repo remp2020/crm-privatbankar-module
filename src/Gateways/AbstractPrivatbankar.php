@@ -16,8 +16,7 @@ use Omnipay\Privatbankar\Message\PurchaseRequest;
 
 abstract class AbstractPrivatbankar extends GatewayAbstract
 {
-    /** @var Gateway */
-    protected $gateway;
+    protected Gateway $gateway;
 
     protected $paymentMetaRepository;
 
@@ -38,7 +37,9 @@ abstract class AbstractPrivatbankar extends GatewayAbstract
 
     protected function initialize()
     {
-        $this->gateway = Omnipay::create('Privatbankar');
+        /** @var Gateway $gateway */
+        $gateway = Omnipay::create('Privatbankar');
+        $this->gateway = $gateway;
 
         $this->gateway->setSource($this->applicationConfig->get('privatbankar_source'));
         $this->gateway->setTestMode($this->applicationConfig->get('privatbankar_mode') !== 'live');
