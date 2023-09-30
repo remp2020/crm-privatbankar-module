@@ -59,12 +59,12 @@ class PrivatbankarRecurrent extends AbstractPrivatbankar implements RecurrentPay
         return $this->paymentMetaRepository->findByPaymentAndKey($this->payment, 'privatbankar_transaction_reference')->value;
     }
 
-    public function getResultCode()
+    public function getResultCode(): ?string
     {
         return $this->response->getTransactionStatus();
     }
 
-    public function getResultMessage()
+    public function getResultMessage(): ?string
     {
         return $this->response->getMessage();
     }
