@@ -5,14 +5,15 @@ namespace Crm\PrivatbankarModule\Presenters;
 use Crm\ApplicationModule\Presenters\FrontendPresenter;
 use Crm\PaymentsModule\Repository\PaymentMetaRepository;
 use Crm\PaymentsModule\Repository\PaymentsRepository;
+use Nette\DI\Attributes\Inject;
 
 class ReturnPresenter extends FrontendPresenter
 {
-    /** @var PaymentMetaRepository @inject */
-    public $paymentMetaRepository;
+    #[Inject]
+    public PaymentMetaRepository $paymentMetaRepository;
 
-    /** @var PaymentsRepository @inject */
-    public $paymentsRepository;
+    #[Inject]
+    public PaymentsRepository $paymentsRepository;
 
     public function renderThankyou($uuid)
     {
