@@ -2,10 +2,10 @@
 
 namespace Crm\PrivatbankarModule\Api;
 
-use Crm\ApiModule\Api\ApiHandler;
-use Crm\ApiModule\Api\EmptyResponse;
-use Crm\ApiModule\Params\InputParam;
-use Crm\ApiModule\Params\ParamsProcessor;
+use Crm\ApiModule\Models\Api\ApiHandler;
+use Crm\ApiModule\Models\Params\InputParam;
+use Crm\ApiModule\Models\Params\ParamsProcessor;
+use Crm\ApiModule\Models\Response\EmptyResponse;
 use Crm\PaymentsModule\PaymentProcessor;
 use Crm\PaymentsModule\Repository\PaymentMetaRepository;
 use Nette\Http\Response;
