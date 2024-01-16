@@ -1,6 +1,6 @@
 <?php
 
-namespace Crm\PrivatbankarModule\Components;
+namespace Crm\PrivatbankarModule\Components\ConfirmationPendingWidget;
 
 use Crm\ApplicationModule\Widget\BaseLazyWidget;
 
