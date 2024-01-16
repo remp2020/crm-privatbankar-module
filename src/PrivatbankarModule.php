@@ -10,7 +10,7 @@ use Crm\ApplicationModule\CrmModule;
 use Crm\ApplicationModule\SeederManager;
 use Crm\ApplicationModule\Widget\LazyWidgetManagerInterface;
 use Crm\PrivatbankarModule\Api\IpnHandler;
-use Crm\PrivatbankarModule\Components\ConfirmationPendingWidget;
+use Crm\PrivatbankarModule\Components\ConfirmationPendingWidget\ConfirmationPendingWidget;
 use Crm\PrivatbankarModule\Seeders\ConfigsSeeder;
 use Crm\PrivatbankarModule\Seeders\PaymentGatewaysSeeder;
 use Crm\PrivatbankarModule\Seeders\SalesFunnelsSeeder;

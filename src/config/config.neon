@@ -4,7 +4,7 @@ services:
 			- addModule(Crm\PrivatbankarModule\PrivatbankarModule())
 
 	- Crm\PrivatbankarModule\Api\IpnHandler
-	- Crm\PrivatbankarModule\Components\ConfirmationPendingWidget
+	- Crm\PrivatbankarModule\Components\ConfirmationPendingWidget\ConfirmationPendingWidget
 	- Crm\PrivatbankarModule\Gateways\Privatbankar
 	- Crm\PrivatbankarModule\Gateways\PrivatbankarRecurrent
 	- Crm\PrivatbankarModule\Seeders\ConfigsSeeder
