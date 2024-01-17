@@ -6,9 +6,9 @@ use Crm\ApplicationModule\Seeders\ISeeder;
 use Crm\PaymentsModule\Repository\PaymentGatewaysRepository;
 use Crm\PrivatbankarModule\Gateways\Privatbankar;
 use Crm\PrivatbankarModule\Gateways\PrivatbankarRecurrent;
-use Crm\SalesFunnelModule\Repository\SalesFunnelsPaymentGatewaysRepository;
-use Crm\SalesFunnelModule\Repository\SalesFunnelsRepository;
-use Crm\SalesFunnelModule\Repository\SalesFunnelsSubscriptionTypesRepository;
+use Crm\SalesFunnelModule\Repositories\SalesFunnelsPaymentGatewaysRepository;
+use Crm\SalesFunnelModule\Repositories\SalesFunnelsRepository;
+use Crm\SalesFunnelModule\Repositories\SalesFunnelsSubscriptionTypesRepository;
 use Crm\SubscriptionsModule\Repository\SubscriptionTypesRepository;
 use Symfony\Component\Console\Output\OutputInterface;
 
