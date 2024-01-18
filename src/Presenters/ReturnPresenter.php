@@ -3,8 +3,8 @@
 namespace Crm\PrivatbankarModule\Presenters;
 
 use Crm\ApplicationModule\Presenters\FrontendPresenter;
-use Crm\PaymentsModule\Repository\PaymentMetaRepository;
-use Crm\PaymentsModule\Repository\PaymentsRepository;
+use Crm\PaymentsModule\Repositories\PaymentMetaRepository;
+use Crm\PaymentsModule\Repositories\PaymentsRepository;
 use Nette\DI\Attributes\Inject;
 
 class ReturnPresenter extends FrontendPresenter

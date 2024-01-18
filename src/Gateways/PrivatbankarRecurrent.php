@@ -2,7 +2,7 @@
 
 namespace Crm\PrivatbankarModule\Gateways;
 
-use Crm\PaymentsModule\Gateways\RecurrentPaymentInterface;
+use Crm\PaymentsModule\Models\Gateways\RecurrentPaymentInterface;
 use Omnipay\Common\Exception\InvalidRequestException;
 use Omnipay\Privatbankar\Message\PurchaseRequest;
 use Omnipay\Privatbankar\Message\PurchaseResponse;
