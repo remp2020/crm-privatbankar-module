@@ -9,7 +9,7 @@ use Crm\PrivatbankarModule\Gateways\PrivatbankarRecurrent;
 use Crm\SalesFunnelModule\Repositories\SalesFunnelsPaymentGatewaysRepository;
 use Crm\SalesFunnelModule\Repositories\SalesFunnelsRepository;
 use Crm\SalesFunnelModule\Repositories\SalesFunnelsSubscriptionTypesRepository;
-use Crm\SubscriptionsModule\Repository\SubscriptionTypesRepository;
+use Crm\SubscriptionsModule\Repositories\SubscriptionTypesRepository;
 use Symfony\Component\Console\Output\OutputInterface;
 
 class SalesFunnelsSeeder implements ISeeder
