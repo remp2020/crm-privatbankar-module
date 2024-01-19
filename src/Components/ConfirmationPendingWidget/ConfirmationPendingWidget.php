@@ -2,7 +2,7 @@
 
 namespace Crm\PrivatbankarModule\Components\ConfirmationPendingWidget;
 
-use Crm\ApplicationModule\Widget\BaseLazyWidget;
+use Crm\ApplicationModule\Models\Widget\BaseLazyWidget;
 
 class ConfirmationPendingWidget extends BaseLazyWidget
 {
