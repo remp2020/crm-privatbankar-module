@@ -34,10 +34,6 @@ class IpnHandler extends ApiHandler
     public function handle(array $params): ResponseInterface
     {
         $paramsProcessor = new ParamsProcessor($this->params());
-        if ($paramsProcessor->hasError()) {
-            $response = new JsonApiResponse(Response::S400_BAD_REQUEST, ['status' => 'error', 'message' => $paramsProcessor->hasError()]);
-            return $response;
-        }
         $params = $paramsProcessor->getValues();
 
         $meta = $this->paymentMetaRepository->findByMeta('privatbankar_transaction_reference', $params['uuid']);
