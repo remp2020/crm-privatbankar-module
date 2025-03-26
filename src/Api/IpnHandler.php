@@ -3,11 +3,11 @@
 namespace Crm\PrivatbankarModule\Api;
 
 use Crm\ApiModule\Models\Api\ApiHandler;
-use Crm\ApiModule\Models\Params\InputParam;
 use Crm\ApiModule\Models\Response\EmptyResponse;
 use Crm\PaymentsModule\Models\PaymentProcessor;
 use Crm\PaymentsModule\Repositories\PaymentMetaRepository;
 use Nette\Http\Response;
+use Tomaj\NetteApi\Params\GetInputParam;
 use Tomaj\NetteApi\Response\JsonApiResponse;
 use Tomaj\NetteApi\Response\ResponseInterface;
 
@@ -26,7 +26,7 @@ class IpnHandler extends ApiHandler
     public function params(): array
     {
         return [
-            new InputParam(InputParam::TYPE_GET, 'uuid', InputParam::REQUIRED),
+            (new GetInputParam('uuid'))->setRequired(),
         ];
     }
 
