@@ -59,11 +59,11 @@ The message which user sees while he/she waits for the confirmation approval is 
 - In your own module, create new widget and extend the message displayed to user or attach your own behavior.
 
     ```php
-    public function registerWidgets(\Crm\ApplicationModule\Widget\WidgetManagerInterface $widgetManager)
+    public function registerLazyWidgets(\Crm\ApplicationModule\Widget\LazyWidgetManagerInterface $lazyWidgetManager)
     {
-        $widgetManager->registerWidget(
+        $lazyWidgetManager->registerWidget(
             'privatbankar.return.pending',
-            $this->getInstance(CustomConfirmationWidget::class),
+            CustomConfirmationWidget::class,
             200
         );
     }
@@ -72,11 +72,11 @@ The message which user sees while he/she waits for the confirmation approval is 
 - In your own module, remove the default widget in case you don't want to display the original "confirmation pending" message.
 
     ```php
-    public function registerWidgets(\Crm\ApplicationModule\Widget\WidgetManagerInterface $widgetManager)
+    public function registerLazyWidgets(\Crm\ApplicationModule\Widget\LazyWidgetManagerInterface $lazyWidgetManager)
     {
-        $widgetManager->removeWidget(
+        $lazyWidgetManager->removeWidget(
             'privatbankar.return.pending',
-            $this->getInstance(\Crm\PrivatbankarModule\Components\ConfirmationPendingWidget::class)
+            \Crm\PrivatbankarModule\Components\ConfirmationPendingWidget::class,
         );
     }
     ```
