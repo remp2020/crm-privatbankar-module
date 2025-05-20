@@ -30,8 +30,8 @@ class PrivatbankarModule extends CrmModule
             new ApiRoute(
                 new ApiIdentifier('1', 'privatbankar', 'ipn'),
                 IpnHandler::class,
-                NoAuthorization::class
-            )
+                NoAuthorization::class,
+            ),
         );
     }
 
@@ -40,7 +40,7 @@ class PrivatbankarModule extends CrmModule
         $widgetManager->registerWidget(
             'privatbankar.return.pending',
             ConfirmationPendingWidget::class,
-            500
+            500,
         );
     }
 }

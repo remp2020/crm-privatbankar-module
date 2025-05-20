@@ -29,7 +29,7 @@ class SalesFunnelsSeeder implements ISeeder
         PaymentGatewaysRepository $paymentGatewaysRepository,
         SalesFunnelsPaymentGatewaysRepository $salesFunnelsPaymentGatewaysRepository,
         SalesFunnelsSubscriptionTypesRepository $salesFunnelsSubscriptionTypesRepository,
-        SubscriptionTypesRepository $subscriptionTypesRepository
+        SubscriptionTypesRepository $subscriptionTypesRepository,
     ) {
         $this->salesFunnelsRepository = $salesFunnelsRepository;
         $this->paymentGatewaysRepository = $paymentGatewaysRepository;

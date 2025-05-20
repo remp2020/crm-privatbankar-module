@@ -29,7 +29,7 @@ abstract class AbstractPrivatbankar extends GatewayAbstract
         ApplicationConfig $applicationConfig,
         Response $httpResponse,
         Translator $translator,
-        PaymentMetaRepository $paymentMetaRepository
+        PaymentMetaRepository $paymentMetaRepository,
     ) {
         parent::__construct($linkGenerator, $applicationConfig, $httpResponse, $translator);
         $this->paymentMetaRepository = $paymentMetaRepository;
@@ -62,7 +62,7 @@ abstract class AbstractPrivatbankar extends GatewayAbstract
             'postcode',
             'city',
             'street',
-            'phone'
+            'phone',
         )->fetchPairs('key', 'value');
 
         /** @var PurchaseRequest $purchaseRequest */

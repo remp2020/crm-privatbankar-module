@@ -26,7 +26,7 @@ class PaymentGatewaysSeeder implements ISeeder
                 $code,
                 450,
                 true,
-                false
+                false,
             );
             $output->writeln("  <comment>* payment type <info>{$code}</info> created</comment>");
         } else {
@@ -40,7 +40,7 @@ class PaymentGatewaysSeeder implements ISeeder
                 $code,
                 460,
                 true,
-                true
+                true,
             );
             $output->writeln("  <comment>* payment type <info>{$code}</info> created</comment>");
         } else {

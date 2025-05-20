@@ -23,7 +23,7 @@ class ConfigsSeeder implements ISeeder
     public function __construct(
         ConfigCategoriesRepository $configCategoriesRepository,
         ConfigsRepository $configsRepository,
-        ConfigBuilder $configBuilder
+        ConfigBuilder $configBuilder,
     ) {
         $this->configCategoriesRepository = $configCategoriesRepository;
         $this->configsRepository = $configsRepository;
@@ -43,7 +43,7 @@ class ConfigsSeeder implements ISeeder
             'privatbankar.config.source.name',
             'privatbankar.config.source.description',
             null,
-            $sorting++
+            $sorting++,
         );
 
         $this->addConfig(
@@ -54,7 +54,7 @@ class ConfigsSeeder implements ISeeder
             'privatbankar.config.mode.name',
             'privatbankar.config.mode.description',
             'test',
-            $sorting++
+            $sorting++,
         );
     }
 }
